@@ -1,0 +1,221 @@
+﻿<Window x:Class="ER_ImageRecogniserWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ImageRecogniser" Height="700" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" x:Name="tabMain" SelectionChanged="tabMain_SelectionChanged">
+            <TabItem Header="FaceDetection">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Team:" Margin="3"/>
+                        <ComboBox x:Name="cboMainTeam" Width="150" DisplayMemberPath="Name" SelectedValuePath="TeamID" SelectedIndex="0" SelectionChanged="cboMainTeam_SelectionChanged"/>
+                        <Button Content="Start Recognition " Margin="3" Click="Start_Recognition_Button_Click"></Button>
+                        <Button Content="Stop Recognition " Margin="3" Click="Stop_Recognition_Button_Click"></Button>
+                    </StackPanel>
+                    <Border Grid.Row="1" BorderThickness="1" BorderBrush="Black">
+                            <Image x:Name="imgBitmap"/>
+                    </Border>
+                </Grid>
+            </TabItem>
+            
+            <TabItem Header="FaceRecognition">
+                <TabControl>
+                    <TabItem Header="Teams">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <DataGrid x:Name="dgTeams" Grid.RowSpan="2" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" SelectionMode="Single" SelectionChanged="dgTeams_SelectionChanged"/>
+
+                            <StackPanel Grid.Column="1" x:Name="stpTeams">
+                                <TextBlock Text="TeamID:" Margin="2"/>
+                                <TextBox Text="{Binding TeamID}" Margin="3" IsReadOnly="True"/>
+                                <TextBlock Text="Name:" Margin="2"/>
+                                <TextBox Text="{Binding Name}" Margin="3" x:Name="txtTeamName"/>
+                                <TextBlock Text="ApiKey:" Margin="2"/>
+                                <TextBox Text="{Binding ApiKey}" Margin="3" IsReadOnly="True"/>
+                                <Button Content="Train team" Name="btnTrainTeam" Click="btnTrainTeam_Click"/>
+                            </StackPanel>
+                            
+                            
+                            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button x:Name="btnCreateTeam" Content="Create" Margin="3" Click="btnCreateTeam_Click"/>
+                                <Button x:Name="btnUpdateTeam" Content="Update" Margin="3" Click="btnUpdateTeam_Click"/>
+                                <Button x:Name="btnDeleteTeam" Content="Delete" Margin="3" Click="btnDeleteTeam_Click"/>
+                            </StackPanel>
+                        
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="TeamMembers">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Team:" Margin="3"/>
+                                <ComboBox x:Name="cboTeam" DisplayMemberPath="Name" SelectedValuePath="TeamID" SelectedIndex="0" SelectionChanged="cboTeam_SelectionChanged"/>
+                            </StackPanel>
+                            <DataGrid x:Name="dgTeamMembers" Grid.Row="1" Grid.RowSpan="2" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" SelectionMode="Single" SelectionChanged="dgTeamMembers_SelectionChanged"/>
+
+                            <StackPanel Grid.Row="1" Grid.Column="1" x:Name="stpTeamMembers">
+                                <TextBlock Text="TeamMemberID:" Margin="2"/>
+                                <TextBox Text="{Binding TeamMemberID}" Margin="3" IsReadOnly="True"/>
+                                <TextBlock Text="Name:" Margin="2"/>
+                                <TextBox Text="{Binding Name}" Margin="3" x:Name="txtTeamMemberName"/>
+                                <TextBlock Text="TeamID:" Margin="2"/>
+                                <TextBox Text="{Binding TeamID}" Margin="3" IsReadOnly="True"/>
+                            </StackPanel>
+
+
+                            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button x:Name="btnCreateTeamMember" Content="Create" Margin="3" Click="btnCreateTeamMember_Click"/>
+                                <Button x:Name="btnUpdateTeamMember" Content="Update" Margin="3" Click="btnUpdateTeamMember_Click"/>
+                                <Button x:Name="btnDeleteTeamMember" Content="Delete" Margin="3" Click="btnDeleteTeamMember_Click"/>
+                            </StackPanel>
+
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="FaceImages">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="TeamMember:" Margin="3"/>
+                                <ComboBox x:Name="cboTeamMember" DisplayMemberPath="Name" SelectedValuePath="TeamMemberID" SelectedIndex="0" SelectionChanged="cboTeamMember_SelectionChanged"/>
+                            </StackPanel>
+                            <DataGrid x:Name="dgFaceImages" Grid.Row="1" Grid.RowSpan="9" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" SelectionMode="Single" SelectionChanged="dgFaceImages_SelectionChanged"/>
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" x:Name="stpFaceImages">
+                                    <TextBlock Text="FaceImageID:" Margin="2"/>
+                                    <TextBox Text="{Binding FaceImageID}" Margin="3" IsReadOnly="True"/>
+                                    <TextBlock Text="Name:" Margin="2"/>
+                                    <TextBox Text="{Binding Comment}" Margin="3" x:Name="txtFaceImageName"/>
+                                    <TextBlock Text="TeamMemberID:" Margin="2"/>
+                                    <TextBox Text="{Binding TeamMemberID}" Margin="3" IsReadOnly="True"/>
+                                    <TextBlock Text="TeamID:" Margin="2"/>
+                                    <TextBox Text="{Binding TeamID}" Margin="3" IsReadOnly="True"/>
+                                    <TextBlock Text="AutoTeach:" Margin="2"/>
+                                    <CheckBox Name="chkAutoTeach" IsChecked="True" Margin="3" />
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Background="Beige" >
+                                    <Image Name="imgFaceImageFace" Width="128" Height="128"></Image>
+                                </StackPanel>
+
+                            </Grid>
+                            <StackPanel Grid.Row="2" Grid.Column="1" Background="Black">
+                                <Image x:Name="imgVideoCapture" Width="256" MinHeight="128"/>
+                                <Button Width="150" Content="Face Snapshot" Click="Face_Snapshot_Button_Click" />
+                            </StackPanel>
+
+                            <Border Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" BorderBrush="Gray" BorderThickness="2" CornerRadius="2">
+                                <StackPanel>
+                                    <Image x:Name="imgFaceBitmap" Width="128" Height="128"/>
+                                    <TextBlock x:Name="txtFaceImagePath" Text=""/>
+                                </StackPanel>
+                            </Border>
+
+                            <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+                                <TextBlock Text="Select image from filesystem: " Margin="3"/>
+                                <Button x:Name="btnSelectFaceImage" Width="30" Height="24" Content="..." Click="btnSelectFaceImage_Click" />
+                                <TextBlock Text="or use image url: " Margin="3"/>
+                                <TextBox Text="http://" Margin="3" Width="200" x:Name="txtFaceImageUrl"/>
+                                <Button x:Name="btnDownloadFaceImage" Width="70" Height="24" Content="Download" Click="btnDownloadFaceImage_Click" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button x:Name="btnCreateFaceImage" Content="Create" Margin="3" Click="btnCreateFaceImage_Click"/>
+                                <Button x:Name="btnUpdateFaceImage" Content="Update" Margin="3" Click="btnUpdateFaceImage_Click"/>
+                                <Button x:Name="btnDeleteFaceImage" Content="Delete" Margin="3" Click="btnDeleteFaceImage_Click"/>
+                            </StackPanel>
+
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="FaceRecognition">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" HorizontalAlignment="Center" BorderBrush="Gray" BorderThickness="2" CornerRadius="2">
+                                <StackPanel>
+                                    <Image x:Name="imgFaceRecognitionBitmap" Width="128" Height="128"/>
+                                    <TextBlock x:Name="txtFaceRecognitionImagePath" Text=""/>
+                                </StackPanel>
+                            </Border>
+
+                            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                                <TextBlock Text="Select image from filesystem: " Margin="3"/>
+                                <Button x:Name="btnSelectFaceRecognitionImage" Width="30" Height="24" Content="..." Click="btnSelectFaceRecognitionImage_Click" />
+                                <TextBlock Text="or use image url: " Margin="3"/>
+                                <TextBox Text="http://" Margin="3" Width="200" x:Name="txtFaceRecognitionImageUrl"/>
+                                <Button x:Name="btnDownloadFaceRecognitionImage" Width="70" Height="24" Content="Download" Click="btnDownloadFaceRecognitionImage_Click" />
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                                <Button x:Name="btnFaceRecognitionStart" Content="Recognise" Height="30" Width="100" Click="btnFaceRecognitionStart_Click" />
+                            </StackPanel>
+
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+                
+            </TabItem>
+            
+            <TabItem Header="EmtionDetection">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="Messages:" Margin="4"/>
+            <TextBlock Name="faceApiMessages" Text="..." Margin="4"/>
+        </StackPanel>
+    </Grid>
+</Window>

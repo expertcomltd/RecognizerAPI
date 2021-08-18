@@ -1,0 +1,150 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ER_Recogniser", "ER_Recogniser\ER_Recogniser.csproj", "{CF36BF58-D08F-425A-9A6A-D0A86C506110}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ER_Recogniser.ServiceModel", "ER_Recogniser.ServiceModel\ER_Recogniser.ServiceModel.csproj", "{8D6DE92C-637E-4433-9810-98D7FBCEA6BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ER_Recogniser.ServiceInterface", "ER_Recogniser.ServiceInterface\ER_Recogniser.ServiceInterface.csproj", "{130DED02-5984-487C-93DD-0D264EED140E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ER_Recogniser.Tests", "ER_Recogniser.Tests\ER_Recogniser.Tests.csproj", "{12B06E45-12F5-4E56-ADB4-5879D98D3105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ER_ImageRecogniserWPF", "ER_ImageRecogniserWPF\ER_ImageRecogniserWPF.csproj", "{208784E6-9AC7-420A-8C61-B1406E426B1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ER_VideoRecogniserWPF", "ER_VideoRecogniserWPF\ER_VideoRecogniserWPF.csproj", "{2C14C14F-E99C-46DB-BDA7-316489A080B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{76077362-E170-4B41-8FF2-EB275A49ED62}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\FaceApi_OpenCV.dll = Lib\FaceApi_OpenCV.dll
+		Lib\FaceApi_OpenCV.pdb = Lib\FaceApi_OpenCV.pdb
+		Lib\Newtonsoft.Json.dll = Lib\Newtonsoft.Json.dll
+		Lib\VideoCapture.dll = Lib\VideoCapture.dll
+		Lib\VideoCapture.pdb = Lib\VideoCapture.pdb
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Res", "Res", "{81B0A39A-0135-4A0B-8C60-E165742A5869}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\Res\haarcascade_eye.xml = Lib\Res\haarcascade_eye.xml
+		Lib\Res\haarcascade_frontalcatface.xml = Lib\Res\haarcascade_frontalcatface.xml
+		Lib\Res\haarcascade_frontalcatface_extended.xml = Lib\Res\haarcascade_frontalcatface_extended.xml
+		Lib\Res\haarcascade_frontalface_alt.xml = Lib\Res\haarcascade_frontalface_alt.xml
+		Lib\Res\haarcascade_frontalface_alt2.xml = Lib\Res\haarcascade_frontalface_alt2.xml
+		Lib\Res\haarcascade_frontalface_alt_tree.xml = Lib\Res\haarcascade_frontalface_alt_tree.xml
+		Lib\Res\haarcascade_frontalface_default.xml = Lib\Res\haarcascade_frontalface_default.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x64", "x64", "{8F80EB06-E137-474C-B21A-BAD7D8D7D59F}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\x64\concrt140.dll = Lib\x64\concrt140.dll
+		Lib\x64\cvextern.dll = Lib\x64\cvextern.dll
+		Lib\x64\EmotionApi_PyProc.dll = Lib\x64\EmotionApi_PyProc.dll
+		Lib\x64\msvcp140.dll = Lib\x64\msvcp140.dll
+		Lib\x64\opencv_ffmpeg341_64.dll = Lib\x64\opencv_ffmpeg341_64.dll
+		Lib\x64\vcruntime140.dll = Lib\x64\vcruntime140.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x86", "x86", "{5011A174-F30B-40F7-B4EE-80426E943BA8}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\x86\concrt140.dll = Lib\x86\concrt140.dll
+		Lib\x86\cvextern.dll = Lib\x86\cvextern.dll
+		Lib\x86\EmotionApi_PyProc.dll = Lib\x86\EmotionApi_PyProc.dll
+		Lib\x86\msvcp140.dll = Lib\x86\msvcp140.dll
+		Lib\x86\opencv_ffmpeg341.dll = Lib\x86\opencv_ffmpeg341.dll
+		Lib\x86\vcruntime140.dll = Lib\x86\vcruntime140.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiRepository", "ApiRepository", "{09B1BD56-1089-45D9-9AEE-D1A79B6E8D09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Help", "Help", "{BE4874D7-E13B-4B48-8AA9-6C163837928D}"
+	ProjectSection(SolutionItems) = preProject
+		Help\ExpertCom_Recogniser.chm = Help\ExpertCom_Recogniser.chm
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmotionApi_Keras", "EmotionApi_Keras", "{84B2716F-CB04-4058-82E4-9922D727B85A}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\x64\EmotionApi_Keras\EmotionApi_Keras.dll = Lib\x64\EmotionApi_Keras\EmotionApi_Keras.dll
+		Lib\x64\EmotionApi_Keras\netstandard.dll = Lib\x64\EmotionApi_Keras\netstandard.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotionTester", "EmotionTester\EmotionTester.csproj", "{CF7FD1AD-2DC6-42AA-970C-32239ED110BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF36BF58-D08F-425A-9A6A-D0A86C506110}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{CF36BF58-D08F-425A-9A6A-D0A86C506110}.Debug|Any CPU.Build.0 = Debug|x64
+		{CF36BF58-D08F-425A-9A6A-D0A86C506110}.Debug|x64.ActiveCfg = Debug|x64
+		{CF36BF58-D08F-425A-9A6A-D0A86C506110}.Debug|x64.Build.0 = Debug|x64
+		{CF36BF58-D08F-425A-9A6A-D0A86C506110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF36BF58-D08F-425A-9A6A-D0A86C506110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF36BF58-D08F-425A-9A6A-D0A86C506110}.Release|x64.ActiveCfg = Release|x64
+		{CF36BF58-D08F-425A-9A6A-D0A86C506110}.Release|x64.Build.0 = Release|x64
+		{8D6DE92C-637E-4433-9810-98D7FBCEA6BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D6DE92C-637E-4433-9810-98D7FBCEA6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D6DE92C-637E-4433-9810-98D7FBCEA6BA}.Debug|x64.ActiveCfg = Debug|x64
+		{8D6DE92C-637E-4433-9810-98D7FBCEA6BA}.Debug|x64.Build.0 = Debug|x64
+		{8D6DE92C-637E-4433-9810-98D7FBCEA6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D6DE92C-637E-4433-9810-98D7FBCEA6BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D6DE92C-637E-4433-9810-98D7FBCEA6BA}.Release|x64.ActiveCfg = Release|x64
+		{8D6DE92C-637E-4433-9810-98D7FBCEA6BA}.Release|x64.Build.0 = Release|x64
+		{130DED02-5984-487C-93DD-0D264EED140E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{130DED02-5984-487C-93DD-0D264EED140E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{130DED02-5984-487C-93DD-0D264EED140E}.Debug|x64.ActiveCfg = Debug|x64
+		{130DED02-5984-487C-93DD-0D264EED140E}.Debug|x64.Build.0 = Debug|x64
+		{130DED02-5984-487C-93DD-0D264EED140E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{130DED02-5984-487C-93DD-0D264EED140E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{130DED02-5984-487C-93DD-0D264EED140E}.Release|x64.ActiveCfg = Release|x64
+		{130DED02-5984-487C-93DD-0D264EED140E}.Release|x64.Build.0 = Release|x64
+		{12B06E45-12F5-4E56-ADB4-5879D98D3105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12B06E45-12F5-4E56-ADB4-5879D98D3105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12B06E45-12F5-4E56-ADB4-5879D98D3105}.Debug|x64.ActiveCfg = Debug|x64
+		{12B06E45-12F5-4E56-ADB4-5879D98D3105}.Debug|x64.Build.0 = Debug|x64
+		{12B06E45-12F5-4E56-ADB4-5879D98D3105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12B06E45-12F5-4E56-ADB4-5879D98D3105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12B06E45-12F5-4E56-ADB4-5879D98D3105}.Release|x64.ActiveCfg = Release|x64
+		{12B06E45-12F5-4E56-ADB4-5879D98D3105}.Release|x64.Build.0 = Release|x64
+		{208784E6-9AC7-420A-8C61-B1406E426B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{208784E6-9AC7-420A-8C61-B1406E426B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{208784E6-9AC7-420A-8C61-B1406E426B1B}.Debug|x64.ActiveCfg = Debug|x64
+		{208784E6-9AC7-420A-8C61-B1406E426B1B}.Debug|x64.Build.0 = Debug|x64
+		{208784E6-9AC7-420A-8C61-B1406E426B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{208784E6-9AC7-420A-8C61-B1406E426B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{208784E6-9AC7-420A-8C61-B1406E426B1B}.Release|x64.ActiveCfg = Release|x64
+		{208784E6-9AC7-420A-8C61-B1406E426B1B}.Release|x64.Build.0 = Release|x64
+		{2C14C14F-E99C-46DB-BDA7-316489A080B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C14C14F-E99C-46DB-BDA7-316489A080B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C14C14F-E99C-46DB-BDA7-316489A080B7}.Debug|x64.ActiveCfg = Debug|x64
+		{2C14C14F-E99C-46DB-BDA7-316489A080B7}.Debug|x64.Build.0 = Debug|x64
+		{2C14C14F-E99C-46DB-BDA7-316489A080B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C14C14F-E99C-46DB-BDA7-316489A080B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C14C14F-E99C-46DB-BDA7-316489A080B7}.Release|x64.ActiveCfg = Release|x64
+		{2C14C14F-E99C-46DB-BDA7-316489A080B7}.Release|x64.Build.0 = Release|x64
+		{CF7FD1AD-2DC6-42AA-970C-32239ED110BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF7FD1AD-2DC6-42AA-970C-32239ED110BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF7FD1AD-2DC6-42AA-970C-32239ED110BD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CF7FD1AD-2DC6-42AA-970C-32239ED110BD}.Debug|x64.Build.0 = Debug|Any CPU
+		{CF7FD1AD-2DC6-42AA-970C-32239ED110BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF7FD1AD-2DC6-42AA-970C-32239ED110BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF7FD1AD-2DC6-42AA-970C-32239ED110BD}.Release|x64.ActiveCfg = Release|Any CPU
+		{CF7FD1AD-2DC6-42AA-970C-32239ED110BD}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{81B0A39A-0135-4A0B-8C60-E165742A5869} = {76077362-E170-4B41-8FF2-EB275A49ED62}
+		{8F80EB06-E137-474C-B21A-BAD7D8D7D59F} = {76077362-E170-4B41-8FF2-EB275A49ED62}
+		{5011A174-F30B-40F7-B4EE-80426E943BA8} = {76077362-E170-4B41-8FF2-EB275A49ED62}
+		{84B2716F-CB04-4058-82E4-9922D727B85A} = {8F80EB06-E137-474C-B21A-BAD7D8D7D59F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7A19DC2-A3AA-4C28-B668-27358C6DA513}
+	EndGlobalSection
+EndGlobal
